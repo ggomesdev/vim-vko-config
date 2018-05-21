@@ -253,12 +253,9 @@ let g:AutoClosePairs = { '#{': '}'}
 let g:AutoCloseProtectedRegions = ["Character"]
 
 " Center screen when scrolling search results
-nmap n nzz
-nmap N Nzz
+" nmap n nzz
+" nmap N Nzz
 " }}}
-
-" ,ow = 'overwrite word', replace a word with what's in the yank buffer
-nnoremap ,ow "_diwhp
 
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
@@ -266,9 +263,6 @@ nnoremap ,ow "_diwhp
 " you want the traditional beginning of line, use ^
 nnoremap 0 ^
 nnoremap ^ 0
-
-" replace all words under cursor
-:nnoremap <Leader>saw :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " switch to relative numbers in normal mode
 autocmd BufLeave * :set norelativenumber
@@ -280,5 +274,21 @@ autocmd InsertLeave * :set relativenumber
 let g:bookmark_sign = '♥'
 let g:bookmark_highlight_lines = 1
 
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+    if exists('g:deoplete#disable_auto_complete')
+	   let g:deoplete#disable_auto_complete = 1
+    endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+    if exists('g:deoplete#disable_auto_complete')
+	   let g:deoplete#disable_auto_complete = 0
+    endif
+endfunction
+
+" AG search for Far
+let g:far#source = 'agnvim'
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

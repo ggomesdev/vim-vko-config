@@ -31,25 +31,27 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
 
 ## General Editing
 
-| Key           | Mode            | Action                                     |
-| ------------- | :-------------: | -----:                                     |
-| `cp`          | Normal          | Duplicate Paragraph                        |
-| `, + Space`   | Normal          | Remove all spaces at EOL                   |
-| `<leader>+a`  | Normal          | Align Paragraph                            |
-| `<leader>+d`  | Normal/Visual   | Duplicate line or selection                |
-| `<leader>+saw`| Normal/Visual   | Replace all occurences under cursor        |
-| `W!!`         | Command         | Write as root                              |
-| `<leader>+o`  | Normal          | Open tag-bar                               |
-| `<leader>+G`  | Normal          | Toggle distraction-free writing            |
-| `gc`          | Normal/visual   | Toggle comments                            |
-| `cn/cN`       | Normal/Visual   | Change current word in a repeatable manner |
-| `:DiffOrig`   | Command         | Show the diff of the last save             |
-| `Ctrl+o`      | Insert          | Expand snippet                             |
-| `s`           | Visual          | Replace within se area                     |
-| `Ctrl+o`      | Insert          | Expand snippet                             |
-| `v`           | Visual/select   | Expand selection                           |
-| `V`           | Visual/select   | Reduce selection                           |
-| `gp`          | Normal          | Select last paste                          |
+| Key           | Mode            | Action                                    |
+| ------------- | :-------------: | -----:                                    |
+| `cp`           | Normal        | Duplicate Paragraph                        |
+| `, + Space`    | Normal        | Remove all spaces at EOL                   |
+| `<leader>+a`   | Normal        | Align Paragraph                            |
+| `<leader>+d`   | Normal/Visual | Duplicate line or selection                |
+| `<leader>+saw` | Normal/Visual | Replace all occurences under cursor        |
+| `W!!`          | Command       | Write as root                              |
+| `<leader>+o`   | Normal        | Open tag-bar                               |
+| `<leader>+G`   | Normal        | Toggle distraction-free writing            |
+| `gc`           | Normal/visual | Toggle comments                            |
+| `cn/cN`        | Normal/Visual | Change current word in a repeatable manner |
+| `:DiffOrig`    | Command       | Show the diff of the last save             |
+| `Ctrl+o`       | Insert        | Expand snippet                             |
+| `s`            | Visual        | Replace within se area                     |
+| `Ctrl+o`       | Insert        | Expand snippet                             |
+| `v`            | Visual/select | Expand selection                           |
+| `V`            | Visual/select | Reduce selection                           |
+| `gp`           | Normal        | Select last paste                          |
+| `;+t`          | Normal        | Search for symbol under cursor             |
+| `;+o`          | Normal        | Search for functions                       |
 
 ## Leaders
 | Key           | Description |
@@ -66,7 +68,7 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
 | `alt+j`       | Normal          | Next tab                       |
 | `alt+k`       | Normal          | Previous tab                   |
 | `Arrows`      | All             | Resize Splits                  |
-| `Rotate`      | All             | Rotate Splits                  |
+| `ctrl+x`      | All             | Rotate Splits                  |
 
 ## Windows
 | Key           | Mode            | Action                              |
@@ -75,6 +77,7 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
 | `s+x`         | Normal          | Remove buffer, leave blank window   |
 | `s+v`         | Normal          | Horizontal split (:split)           |
 | `s+g`         | Normal          | Vertical split (:vsplit)            |
+| `s+b`         | Normal          | Toggle to last window               |
 | `<leader>+sv` | Normal          | Split with previous buffer          |
 | `<leader>+sg` | Normal          | Vertical split with previous buffer |
 | `Ctrl+<hjkl>` | Normal          | move to window                      |
@@ -116,6 +119,14 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
 | `t`                        | Far             | Toggle the match above the cursor           |
 | `:Fardo`                   | Far             | Do the replacement                          |
 | `:F <patter>`              | Command         | find all                                    |
+
+## Ctags (Goto definition)
+
+| Key           | Mode            | Action                             |
+| ------------- | :-------------: | -----:                             |
+| `Ctrl+]`      | Normal          | Go to definition                   |
+| `Ctrl+T`      | Normal          | Jump back from definition          |
+| `alt+]`       | Normal          | Go to definition(split vertically) |
 
 ## Multiple Cursor
 
@@ -257,6 +268,17 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
 | `<learder>+relv` | Normal          | To local variable                                     |
 | `<learder>+rrlv` | Normal          | Rename local variable                                 |
 | `<learder>+rriv` | Normal          | Rename instance variable                              |
+
+## Python/Flask
+
+| Key           | Mode                           | Action         |
+| ------------- | :-------------:                | -----:         |
+| `af`          | Normal                         | function       |
+| `if`          | Normal                         | inner function |
+| `ac`          | Normal                         | class          |
+| `ic`          | Normal                         | inner class    |
+| `[pf / ]pf`   | move to next/previous function | class          |
+| `[pc / ]pc`   | move to next/previous class    | inner class    |
 
 ## Javascript
 
@@ -441,6 +463,7 @@ Name           | Description
 [exu/pgsql.vim] | PostgreSQL syntax
 [othree/nginx-contrib-vim] | Fork official vim nginx
 [IN3D/vim-raml] | Syntax and language settings for RAML
+[tpope/vim-rails] | Ruby on Rails power tools
 
 ### Commands
 
@@ -667,6 +690,4 @@ TODO:
 - Map f9 to :sort
 - Ruby string interpolation automatically
 - Instal gist-vim
-- Select two words and transpose (like sublime)
-- Ctags
 ```

@@ -45,9 +45,16 @@ nnoremap <CR> za
 nmap <A-A> :Tabularize /
 vmap <A-A> :Tabularize /
 
+" Tabs change by number
+nnoremap <silent> <A-1> :<C-U>tabn1<CR>
+nnoremap <silent> <A-2> :<C-U>tabn2<CR>
+nnoremap <silent> <A-3> :<C-U>tabn3<CR>
+nnoremap <silent> <A-4> :<C-U>tabn4<CR>
+nnoremap <silent> <A-5> :<C-U>tabn5<CR>
+
 " Far - Search and Replace
-nmap <A-F> :Far
 vmap <A-F> :Far
+nmap <A-F> :Far
 
 " Focus the current fold by closing all others
 nnoremap <S-Return> zMza
@@ -394,4 +401,27 @@ map ,` ysiw`
 "
 " Replace all words under cursor
 :nnoremap <Leader>saw :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" CTAGS maps
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" ,ow = 'overwrite word', replace a word with what's in the yank buffer
+nnoremap ,ow "_diwhp
+
+" replace all words under cursor
+:nnoremap <Leader>saw :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" pythong-jedi
+let g:jedi#goto_command = "<leader>p"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
+
+" Python doc
+nmap <silent> <C-_> <Plug>(pydocstring)
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
